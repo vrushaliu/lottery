@@ -1,0 +1,241 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Lottery App API",
+      "description": "Find out how your APIs work",
+      "license": {
+        "name": "VU",
+        "url": ""
+      }
+    },
+    "host": "localhost:8080",
+    "basePath": "/api/tickets",
+    "tags": [
+      {
+        "name": "Tickets",
+        "description": "API for tickets in the system"
+      }
+
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+        "/all":{
+            "get": {
+                "summary": "Get All Tickets",
+                "description": "Returns both active and inactive tickets in the system",
+                "responses": {
+                    "200": {
+                      "description": "Successful operation",
+                      "content": {
+                        "application/json": {
+                          "schema": {
+                            "$ref": "#/definitions/Ticket"
+                          }
+                        }
+                      }
+                    },
+                    "400":{
+                        "description": "Get All failed!!"
+                      }
+                  }
+                  
+                }
+          },
+          "/{id}": {
+            "get": {
+                "summary": "Get ticket By Id",
+                "description": "Get ticket By Id, returns only if ticket is active",
+                "operationId": "getTicketById",
+            "parameters": [
+              {
+                "name": "id",
+                "in": "path",
+                "description": "Ticket ID",
+                "required": true,
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Successful operation",
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/definitions/Ticket"
+                    }
+                  }
+                }
+              },
+              "400":{
+                "description": "Add lines failed!!"
+              }
+            },
+                "produces": [
+                  "application/json"
+                ]
+                  
+                }
+                },
+      "/create": {
+        "post": {
+          "summary": "Create Ticket",
+          "description": "Create ticket in system",
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Ticket",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/Ticket"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "201": {
+              "description": "Success",
+              "schema": {
+                "$ref": "#/definitions/Ticket"
+              }
+            },
+            "400":{
+              "description": "Creation failed!!"
+            }
+          }
+        
+          }
+        },
+
+    
+              
+      "/update/{id}": {
+        "patch": {
+            "summary": "Add lines to Ticket",
+            "description": "Add lines to Ticket",
+            "operationId": "updateTicketById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Ticket ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Ticket",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Ticket"
+              }
+            }
+          
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/definitions/Ticket"
+                }
+              }
+            }
+          },
+          "400":{
+            "description": "Add lines failed!!"
+          }
+        },
+            "produces": [
+              "application/json"
+            ]
+            
+              
+            }
+            },
+        "/status/{id}": {
+                "patch": {
+                    "summary": "Check ticket status",
+                    "description": "Once you check status, it will be inactive",
+                    "operationId": "checkTicketStatusById",
+                "parameters": [
+                  {
+                    "name": "id",
+                    "in": "path",
+                    "description": "Ticket ID",
+                    "required": true,
+                    "schema": {
+                      "type": "integer",
+                      "format": "int64"
+                    }
+                  }
+                  
+                ],
+                "responses": {
+                  "200": {
+                    "description": "Successful operation",
+                    "content": {
+                      "application/json": {
+                        "schema": {
+                          "$ref": "#/definitions/Ticket"
+                        }
+                      }
+                    }
+                  },
+                  "400":{
+                    "description": "Add lines failed!!"
+                  }
+                },
+                    "produces": [
+                      "application/json"
+                    ]
+                    
+                      
+                    }
+                    }
+          },
+          
+    
+
+    "definitions": {
+
+      "Ticket": {
+        "properties": {
+          "lineQuantity": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      },
+      "Line":{
+        "properties": {
+          "valueCount": {
+            "type": "integer"
+          },
+		  "outcome": {
+            "type": "integer"
+          }
+        }
+      }
+   }
+  }

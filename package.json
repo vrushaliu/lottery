@@ -1,0 +1,34 @@
+{
+  "name": "vlottery",
+  "version": "1.0.0",
+  "description": "node js lottery rest api with NoSQL(MongoDB)",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node -r esm --harmony index.js",
+    "dev": "NODE_ENV=development node -r esm --inspect --harmony index.js",
+    "local": "NODE_ENV=local nodemon -r esm --inspect --harmony index.js",
+    "test": "./node_modules/.bin/mocha -r esm -timeout 1000 --exit --reporter spec"
+  },
+  "author": "Vrushali Ubarhande",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "esm": "^3.2.25",
+    "expect": "^26.6.2",
+    "express": "^4.17.1",
+    "mocha": "^8.3.2",
+    "mongoose": "^5.12.2",
+    "morgan": "^1.10.0",
+    "oas-generator": "^2.1.5",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "swagger-ui-express": "^4.1.6"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "eslint-config-google": "^0.14.0",
+    "jsdoc": "^3.6.6",
+    "nodemon": "^2.0.7"
+  }
+}
