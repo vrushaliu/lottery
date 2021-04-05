@@ -22,7 +22,7 @@ module.exports = (app) => {
   // Verify a single ticket with Id, demo purpose only,
   // It is not part of solution
   // not added to swagger
-  //routes.route('/verify/:id').get(ticketController.api.verifyTicketOutcomeById);
+   routes.route('/verify/:id').get(ticketController.api.verifyTicketOutcomeById);
 
   // Update lines in  a ticket using Id, Patch - Partial update
   routes.patch('/update/:id', ticketController.api.updateTicketLineById);

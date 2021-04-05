@@ -125,17 +125,16 @@ exports.api.verifyTicketOutcomeById = (req, res, next) => {
           if (!ticket) {
             return next('Please be sure ticket id exists.');
           }
-          //if (ticket.active) 
-          
-            const ticketDoc = ticket.toObject();
+          // if (ticket.active)
 
-            // delete ticketDoc.allLines; // deleting allLine array
+          const ticketDoc = ticket.toObject();
 
-            res.status(200).json({ticket: ticketDoc});
-           //else 
-          
+          // delete ticketDoc.allLines; // deleting allLine array
+
+          res.status(200).json({ticket: ticketDoc});
+          // else
+
           //  res.status(400).json({message: config.ERROR_INACTIVE_TICKET});
-          
         });
   } else {
     res.status(400).json({message: 'Invalid ticket id.'});

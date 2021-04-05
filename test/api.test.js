@@ -234,7 +234,7 @@ describe('Add lines', async function() {
       expect(response.statusCode).to.equal(200);
       ticketJSON = JSON.parse(response.body);
       const isActive = ticketJSON.ticket.active;
-      //console.log('isActive' + isActive);
+      // console.log('isActive' + isActive);
 
       expect(isActive).to.equal(false);
     });
@@ -259,7 +259,7 @@ describe('Check ticket Status', function() {
       const isActive = ticketJSON.ticket.active;
       // console.log("isActive" + isActive);
       const outcomeArrLength = ticketJSON.ticket.outcomeArr.length;
-      //console.log('Outcome Array' + ticketJSON.ticket.outcomeArr.length);
+      // console.log('Outcome Array' + ticketJSON.ticket.outcomeArr.length);
       expect(isActive).to.equal(false);
       // defaulr value used while creating Ticket
       expect(outcomeArrLength).to.equal(config.test_post_line_count);
@@ -324,7 +324,7 @@ function setTicketStatus(id, callback) {
 function updateTicketWithLines(id, callback) {
   delay(500);
   const url = config.test_url + '\/update\/' +id;
-  //console.log('URL ' +url);
+  // console.log('URL ' +url);
   request.patch({
     headers: {
       'Content-Type': 'application/json'},
@@ -357,7 +357,7 @@ function delay(interval) {
  * @return {*} returns body
  */
 function getNewTicketBody(options) {
-  //console.log('Get Body');
+  // console.log('Get Body');
   return new Promise((resolve, reject) => {
     request(options, (error, response, body) => {
       expect(response.statusCode).to.equal(201);
@@ -373,7 +373,7 @@ function getNewTicketBody(options) {
  * @return {*} body
  */
 function getAllTicket(options) {
-  //console.log('Get Body');
+  // console.log('Get Body');
   return new Promise((resolve, reject) => {
     request(options, (error, response, body) => {
       expect(response.statusCode).to.equal(200);
@@ -421,14 +421,14 @@ async function getNewTicketId() {
       },
     };
     body = await getNewTicketBody(requestOpts);
-    //console.log('getNewTicketId SHOULD WORK:');
+    // console.log('getNewTicketId SHOULD WORK:');
     // console.log(body);
   } catch (error) {
     console.error('ERROR:');
     console.error(error);
   }
   ticketId = await body.ticket._id;
-  //console.log('ticketId ' + ticketId);
+  // console.log('ticketId ' + ticketId);
 
   return ticketId;
 }
@@ -478,7 +478,7 @@ async function refreshAllTicket() {
 
     };
     body = await getAllTicket(requestOpts);
-    //console.log('getAllTicket SHOULD WORK:');
+    // console.log('getAllTicket SHOULD WORK:');
     if (body) {
       console.log('REfreshed');
     }

@@ -36,7 +36,7 @@ describe('Create a Line model', function() {
 describe('Verify Outcome', function() {
   it('Verify Same number 000 Outcome:10', function() {
     const line = Line.createLine();
-    let outcomeSum = 5;
+    const outcomeSum = 5;
     // Outcome logic
     line.allValues[0].value = 0;
     line.allValues[1].value = 0;
@@ -48,7 +48,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify Same number 111 Outcome:5', function() {
     const line = Line.createLine();
-    let outcomeSum = 5;
+    const outcomeSum = 5;
     // Outcome logic
     line.allValues[0].value = 1;
     line.allValues[1].value = 1;
@@ -60,7 +60,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify Same number 222 Outcome:5', function() {
     const line = Line.createLine();
-    let outcomeSum = 5;
+    const outcomeSum = 5;
     // Outcome logic
     line.allValues[0].value = 2;
     line.allValues[1].value = 2;
@@ -72,7 +72,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify Sum ==2 011 Outcome:10', function() {
     const line = Line.createLine();
-    let outcomeSum = 10;
+    const outcomeSum = 10;
     // Outcome logic
     line.allValues[0].value = 0;
     line.allValues[1].value = 1;
@@ -84,7 +84,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify Sum ==2 101 Outcome:10', function() {
     const line = Line.createLine();
-    let outcomeSum = 10;
+    const outcomeSum = 10;
     // Outcome logic
     line.allValues[0].value = 1;
     line.allValues[1].value = 0;
@@ -96,7 +96,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify Sum ==2 020 Outcome:10', function() {
     const line = Line.createLine();
-    let outcomeSum = 10;
+    const outcomeSum = 10;
     // Outcome logic
     line.allValues[0].value = 0;
     line.allValues[1].value = 2;
@@ -108,7 +108,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify Sum ==2 002 Outcome:10', function() {
     const line = Line.createLine();
-    let outcomeSum = 10;
+    const outcomeSum = 10;
     // Outcome logic
     line.allValues[0].value = 0;
     line.allValues[1].value = 0;
@@ -120,7 +120,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify Sum ==2 200 Outcome:10', function() {
     const line = Line.createLine();
-    let outcomeSum = 10;
+    const outcomeSum = 10;
     // Outcome logic
     line.allValues[0].value = 2;
     line.allValues[1].value = 0;
@@ -132,7 +132,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify 012 Outcome:1', function() {
     const line = Line.createLine();
-    let outcomeSum = 1;
+    const outcomeSum = 1;
     // Outcome logic
     line.allValues[0].value = 0;
     line.allValues[1].value = 1;
@@ -144,7 +144,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify 022 Outcome:1', function() {
     const line = Line.createLine();
-    let outcomeSum = 1;
+    const outcomeSum = 1;
     // Outcome logic
     line.allValues[0].value = 0;
     line.allValues[1].value = 2;
@@ -156,7 +156,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify 202 Outcome:0', function() {
     const line = Line.createLine();
-    let outcomeSum = 0;
+    const outcomeSum = 0;
     // Outcome logic
     line.allValues[0].value = 2;
     line.allValues[1].value = 0;
@@ -168,7 +168,7 @@ describe('Verify Outcome', function() {
   });
   it('Verify 112 Outcome:0', function() {
     const line = Line.createLine();
-    let outcomeSum = 0;
+    const outcomeSum = 0;
     // Outcome logic
     line.allValues[0].value = 1;
     line.allValues[1].value = 1;
