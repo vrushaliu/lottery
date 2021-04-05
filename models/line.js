@@ -55,7 +55,7 @@ lineSchema.statics.createLine = function createLine() {
 };
 
 /**
- * Update values, it is there for test pupose only
+ * Update values, it is there for test purpose only
  * @param {*} line
  */
 lineSchema.methods.updateLineOutcome = function updateLineOutcome(line) {
